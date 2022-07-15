@@ -1,0 +1,3 @@
+This is a file which can be accessed by anyone
+
+the files under static folder are visible to all / publically available

@@ -1,8 +1,12 @@
 from django.shortcuts import render,HttpResponse
 
 # Create your views here.
+#this is called url dispatching
 def index (request):
-    return HttpResponse("This is home page")
+    context = {
+        'var1' : 'this is sent :)'
+    }
+    return render(request, "index.html" , context)
 def categories (request):
     return HttpResponse("This is categories page")
 def products (request):
