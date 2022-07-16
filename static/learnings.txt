@@ -1,3 +1,13 @@
 This is a file which can be accessed by anyone
 
 the files under static folder are visible to all / publically available
+
+run "python manage.py runserver" to start localhost (like webpack)
+
+run "python manage.py startapp appname" to create a new app in root folder
+__________________________________
+Authentication is built into Django
+
+run "python manage.py makemigrations" to import all the tables for user Authentication
+
+then run "python manage.py migrate" to merge all the tables for user Authentication

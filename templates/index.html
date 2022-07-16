@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> This is a website </title>
-    </head>
-<body>
-    <h1>
-        Hello this is a html template under templates directory
-    </h1>
-    <h2>this is value of variable recieved from views.py : {{ var1 }}</h2>
-    <p>{% lorem 5 p random %}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+Homepage
+{% endblock title %}
+
+
+{% block body %}
+THIS IS BLOCK BODY
+{% endblock body %}
+
+

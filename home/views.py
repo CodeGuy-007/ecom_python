@@ -12,4 +12,6 @@ def categories (request):
 def products (request):
     return HttpResponse("This is products page")
 def orders (request):
-    return HttpResponse("This is orders page")
+    return render(request, "orders.html" )
+
+    # return HttpResponse("This is orders page")
