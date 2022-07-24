@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ecom_django_mysql.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates",],  #custom
+        'DIRS': [BASE_DIR / "templates"],  #custom
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
