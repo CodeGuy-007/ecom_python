@@ -17,6 +17,14 @@
     {% load variable_tags %}
   </head>
   <body class="d-flex flex-column h-100">
+    {% for message in messages %}
+  
+      <div class=" alert alert-warning alert-dismissible fade show" style="max-width:100%" role="alert">
+        {{ message }}
+        <a class="close" href="#" data-dismiss="alert">X</a>
+      </div>
+
+    {% endfor %}
     <nav class="navbar navbar-expand-lg bg-light">
       <div class=" px-3 container">
         {% comment %} <a class="navbar-brand " href="/"> {% site_name %}</a> {% endcomment %}
@@ -66,8 +74,22 @@
             <li class="nav-item">
               <a class="nav-link" href="/orders"><i class="bi bi-cart" name="cart_icon" title="Cart"></i></a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="/login"><i class="bi bi-person-circle" title="User"></i></a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="#"> {{ username }} </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout">Log out</a></li>
+
+                {% else %}
+                <li><a class="dropdown-item" href="/login">Log in</a></li>
+                <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+                {% endif %}
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="/login"><i class="bi bi-person-circle" name="login_icon" title="Login"></i></a>
+              
             </li>
           </ul>
         </div>

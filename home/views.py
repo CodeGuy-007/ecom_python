@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 #this is called url dispatching
@@ -21,8 +21,9 @@ def signin (request):
 
         if user is not None:
             login(request,user)
+            username = user.username
             # return render(request,'Authentication/index_base.html')
-            return redirect(index)
+            return render(request, "index_base.html",{'username':username})
         
         else:
             messages.error(request,"Incorrect Creditentials! try again")
@@ -48,6 +49,15 @@ def signup (request):
         return redirect('signin')
 
     return render(request, "Authentication/signup_login.html" )
+
+def signout(request):
+    logout(request)
+    messages.success(request, "Logged out successfully!")
+    return redirect('/')
+
+
+
+
 def categories (request):
     return render(request, "categories_base.html")
 def products (request):
