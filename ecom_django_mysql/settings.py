@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-dlycwaf3460r(#s1z%$v9nu4tda2)myjiblf=oy-ir87g2asp_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ecom-django.netlify.app]
+ALLOWED_HOSTS = ['ecom-django.netlify.app']
 
 
 # Application definition
