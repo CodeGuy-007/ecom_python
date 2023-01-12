@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from .info import *
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,9 +30,9 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = 'django-insecure-dlycwaf3460r(#s1z%$v9nu4tda2)myjiblf=oy-ir87g2asp_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ecom-django.netlify.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,11 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
 # added manually
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -1,0 +1,1 @@
+web gunicorn ecom_django_mysql.wsgi:application --log-file-
